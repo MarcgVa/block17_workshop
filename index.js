@@ -19,20 +19,19 @@ class Numbers {
   }
   printNumbersHTML() {
     //print the numbers in data
-    const tempArr = [];
+    let tempArr = [];
     this.data.forEach((e, i) => {
-      //tempArr.push(`${i}-${e}`);
-      tempArr.push(`number ${e} at index ${i}.`);
+      tempArr.push(`number ${e} at index ${i}`);
     });
     return tempArr;
   }
   odds() {
     //return the odd numbers in data
-    return this.data.filter((e) => e % 2 !== 0);
+    return this.data.filter((e) => e % 2 !== 0).sort();
   }
   evens() {
     //return the even numbers in data
-    return this.data.filter((e) => e % 2 === 0);
+    return this.data.filter((e) => e % 2 === 0).sort();
   }
   sum() {
     //return the sum of the numbers
@@ -44,7 +43,7 @@ class Numbers {
   }
   greaterThan(target) {
     //return the numbers greater than the target
-    return this.data.filter((e) => e > target);
+    return this.data.filter((e) => e > target).sort();
   }
   howMany(target) {
     //return the count of a given number
@@ -71,7 +70,7 @@ const paraArr = document.getElementsByTagName("p");
 
 const textArr = [
   "Return count of numbers:",
-  "prints the number along with their indexes:",
+  "Prints the number along with their indexes:",
   "Return odd numbers:",
   "Return even numbers:",
   "Return the sum of numbers:",
