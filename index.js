@@ -15,15 +15,24 @@ class Numbers {
   }
   printNumbers() {
     //print the numbers in data
-    this.data.forEach((e,i) => console.log(`number: ${e} at index ${i}.`));
+    this.data.forEach((e,i) => console.log(`number ${e} at index ${i}.`));
+  }
+  printNumbersHTML() {
+    //print the numbers in data
+    const tempArr = [];
+    this.data.forEach((e, i) => {
+      //tempArr.push(`${i}-${e}`);
+      tempArr.push(`number ${e} at index ${i}.`);
+    });
+    return tempArr;
   }
   odds() {
     //return the odd numbers in data
-    return this.data.filter((e) => e % 2 !== 0 );
+    return this.data.filter((e) => e % 2 !== 0);
   }
   evens() {
     //return the even numbers in data
-      return this.data.filter((e) => e % 2 === 0);
+    return this.data.filter((e) => e % 2 === 0);
   }
   sum() {
     //return the sum of the numbers
@@ -45,6 +54,7 @@ class Numbers {
 
 //Prompt the user for a list of integers separated by commas
 const str = prompt("enter some numbers, like this", "1,2,3,3,5,9");
+//const str =  "1,2,3,3,5,9";
 //create an instance of numbers
 const n1 = new Numbers(str);
 console.log(n1.count()); //returns count of numbers
@@ -56,19 +66,40 @@ console.log(n1.product()); //returns product of numbers
 console.log(n1.greaterThan(3)); //returns numbers greater than another number
 console.log(n1.howMany(3)); //return the count of a specific number
 
-// let text = document.getElementsByClassName('text')
-// let p = document.createElement("p");
-// let h = document.createElement("h4");
+const headerArr = document.getElementsByTagName("h4");
+const paraArr = document.getElementsByTagName("p");
+
+const textArr = [
+  "Return count of numbers:",
+  "prints the number along with their indexes:",
+  "Return odd numbers:",
+  "Return even numbers:",
+  "Return the sum of numbers:",
+  "Return the product of numbers:",
+  "Return numbers greater than another number:",
+  "Return the count of a specific number:",
+];
 
 
-// text.appendChild("Return count of numbers:", h);
-// text.appendChild(n1.count(), p);
-// text.appendChild("prints the number along with their indexes:", h);
-// text.appendChild(n1.count(), p);
-// n1.printNumbers(); //prints the number along with their indexes
-// console.log(n1.odds()); //returns odd numbers
-// console.log(n1.evens()); //returns even numbers
-// console.log(n1.sum()); //returns sum of numbers
-// console.log(n1.product()); //returns product of numbers
-// console.log(n1.greaterThan(3)); //returns numbers greater than another number
-// console.log(n1.howMany(3)); //return the count of a specific number
+for (let i = 0; i < headerArr.length; i++){
+  headerArr[i].innerText = textArr[i];
+}
+
+
+
+
+paraArr[0].innerText = n1.count();
+// //text.append("prints the number along with their indexes:");
+paraArr[1].innerText = n1.printNumbersHTML(); //prints the number along with their indexes
+// text.append("Return odd numbers:");
+paraArr[2].innerText = n1.odds();
+// text.append("Return even numbers:");
+paraArr[3].innerText = n1.evens();
+// text.append("Return the sum of numbers:");
+paraArr[4].innerText = n1.sum();
+// text.append("Return the product of numbers:");
+paraArr[5].innerText = n1.product(); //returns product of numbers
+// text.append("Return numbers greater than another number:");
+paraArr[6].innerText = n1.greaterThan(3); //returns numbers greater than another number
+// text.append("Return the count of a specific number:");
+paraArr[7].innerText = n1.howMany(3); //return the count of a specific number
