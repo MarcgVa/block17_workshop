@@ -15,7 +15,7 @@ class Numbers {
   }
   printNumbers() {
     //print the numbers in data
-    this.data.forEach((e) => console.log(e));
+    this.data.forEach((e,i) => console.log(`number: ${e} at index ${i}.`));
   }
   odds() {
     //return the odd numbers in data
@@ -55,3 +55,20 @@ console.log(n1.sum()); //returns sum of numbers
 console.log(n1.product()); //returns product of numbers
 console.log(n1.greaterThan(3)); //returns numbers greater than another number
 console.log(n1.howMany(3)); //return the count of a specific number
+
+// let text = document.getElementsByClassName('text')
+// let p = document.createElement("p");
+// let h = document.createElement("h4");
+
+
+// text.appendChild("Return count of numbers:", h);
+// text.appendChild(n1.count(), p);
+// text.appendChild("prints the number along with their indexes:", h);
+// text.appendChild(n1.count(), p);
+// n1.printNumbers(); //prints the number along with their indexes
+// console.log(n1.odds()); //returns odd numbers
+// console.log(n1.evens()); //returns even numbers
+// console.log(n1.sum()); //returns sum of numbers
+// console.log(n1.product()); //returns product of numbers
+// console.log(n1.greaterThan(3)); //returns numbers greater than another number
+// console.log(n1.howMany(3)); //return the count of a specific number
