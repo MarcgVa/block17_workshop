@@ -15,9 +15,7 @@ class Numbers {
   }
   printNumbers() {
     //print the numbers in data
-    this.data.forEach(e => {
-      console.log(e);
-    });
+    this.data.forEach((e) => console.log(e));
   }
   odds() {
     //return the odd numbers in data
