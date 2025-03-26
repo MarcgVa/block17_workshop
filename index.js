@@ -11,33 +11,42 @@ class Numbers {
   }
   count() {
     //return the count of numbers in data
+    return this.data.length;
   }
   printNumbers() {
     //print the numbers in data
+    this.data.forEach(e => {
+      console.log(e);
+    });
   }
   odds() {
     //return the odd numbers in data
+    return this.data.filter((e) => e % 2 !== 0 );
   }
   evens() {
     //return the even numbers in data
+      return this.data.filter((e) => e % 2 === 0);
   }
   sum() {
     //return the sum of the numbers
+    return this.data.reduce((t, n) => t + n, 0);
   }
   product() {
     //return the product of the numbers
+    return this.data.reduce((t, n) => t * n);
   }
   greaterThan(target) {
     //return the numbers greater than the target
+    return this.data.filter((e) => e > target);
   }
   howMany(target) {
     //return the count of a given number
+    return this.data.filter((e) => e === target).length;
   }
 }
 
 //Prompt the user for a list of integers separated by commas
 const str = prompt("enter some numbers, like this", "1,2,3,3,5,9");
-
 //create an instance of numbers
 const n1 = new Numbers(str);
 console.log(n1.count()); //returns count of numbers
