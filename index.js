@@ -52,8 +52,8 @@ class Numbers {
 }
 
 //Prompt the user for a list of integers separated by commas
-//const str = prompt("enter some numbers, like this", "1,2,3,3,5,9");
-const str =  "1,2,3,3,5,9";
+const str = prompt("enter some numbers, like this", "1,2,3,3,5,9");
+//const str =  "1,2,3,3,5,9";
 //create an instance of numbers
 const n1 = new Numbers(str);
 console.log(n1.count()); //returns count of numbers
