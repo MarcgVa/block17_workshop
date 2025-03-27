@@ -52,8 +52,8 @@ class Numbers {
 }
 
 //Prompt the user for a list of integers separated by commas
-const str = prompt("enter some numbers, like this", "1,2,3,3,5,9");
-//const str =  "1,2,3,3,5,9";
+//const str = prompt("enter some numbers, like this", "1,2,3,3,5,9");
+const str =  "1,2,3,3,5,9";
 //create an instance of numbers
 const n1 = new Numbers(str);
 console.log(n1.count()); //returns count of numbers
@@ -65,8 +65,7 @@ console.log(n1.product()); //returns product of numbers
 console.log(n1.greaterThan(3)); //returns numbers greater than another number
 console.log(n1.howMany(3)); //return the count of a specific number
 
-const headerArr = document.getElementsByTagName("h4");
-const paraArr = document.getElementsByTagName("p");
+const mainDiv = document.getElementById("text");
 
 const textArr = [
   "Return count of numbers:",
@@ -79,26 +78,25 @@ const textArr = [
   "Return the count of a specific number:",
 ];
 
+const funcArr = [
+  n1.count(),
+  n1.printNumbersHTML(),
+  n1.odds(),
+  n1.evens(),
+  n1.sum(),
+  n1.product(),
+  n1.greaterThan(3),
+  n1.howMany(3),
+];
 
-for (let i = 0; i < headerArr.length; i++){
-  headerArr[i].innerText = textArr[i];
+
+for (let i = 0; i < textArr.length; i++){
+  const h = document.createElement("h4");
+  const p = document.createElement("p");
+  let result = funcArr[i];
+  h.textContent = textArr[i];
+  p.textContent = result;
+
+  mainDiv.append(h);
+  mainDiv.append(p);
 }
-
-
-
-
-paraArr[0].innerText = n1.count();
-// //text.append("prints the number along with their indexes:");
-paraArr[1].innerText = n1.printNumbersHTML(); //prints the number along with their indexes
-// text.append("Return odd numbers:");
-paraArr[2].innerText = n1.odds();
-// text.append("Return even numbers:");
-paraArr[3].innerText = n1.evens();
-// text.append("Return the sum of numbers:");
-paraArr[4].innerText = n1.sum();
-// text.append("Return the product of numbers:");
-paraArr[5].innerText = n1.product(); //returns product of numbers
-// text.append("Return numbers greater than another number:");
-paraArr[6].innerText = n1.greaterThan(3); //returns numbers greater than another number
-// text.append("Return the count of a specific number:");
-paraArr[7].innerText = n1.howMany(3); //return the count of a specific number
